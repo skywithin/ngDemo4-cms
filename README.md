@@ -7,3 +7,8 @@ ng g c components/navbar
 
 3. Add navbar sample html from http://getbootstrap.com/docs/3.3/examples/starter-template/
 
+4. Create Page service
+ng generate service services/page -m-app.module
+ng g s services/page
+
+
