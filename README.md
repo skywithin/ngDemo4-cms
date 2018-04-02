@@ -21,4 +21,5 @@ ng g c components/pages
 8. Admin pages
 ng g c components/adminPages
 
-
+9. Admin add-page
+ng g c components/adminAddPage
