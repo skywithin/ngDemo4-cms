@@ -11,4 +11,5 @@ ng g c components/navbar
 ng generate service services/page -m-app.module
 ng g s services/page
 
-
+5. Create Pages component
+ng g c components/pages
