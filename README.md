@@ -23,3 +23,5 @@ ng g c components/adminPages
 
 9. Admin add-page
 ng g c components/adminAddPage
+
+10. Create addPage() method

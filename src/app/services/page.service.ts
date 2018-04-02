@@ -16,4 +16,9 @@ export class PageService {
   getPage(slug) {
     return this.http.get('http://localhost:52897/api/pages/' + slug);
   }
+
+  postAddPage(value) {
+    return this.http.post('http://localhost:52897/api/pages/create', value);
+  }
+
 }
