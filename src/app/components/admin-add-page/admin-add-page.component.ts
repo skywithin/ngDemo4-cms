@@ -25,18 +25,19 @@ export class AdminAddPageComponent implements OnInit {
   }
 
   addPage({form, value, valid}){
-    form.reset();
     if (valid) {
       this.pageService.postAddPage(value).subscribe(response => {
         if (response == 'pageExists') {
-          this.errorMsg == true;
+          this.errorMsg = true;
           setTimeout(function() {
-            this.errorMsg == false;
+            this.errorMsg = false;
           }.bind(this), this.displayMsgTimeout)
         } else {
-          this.successMsg == true;
+          // Success
+          form.reset();
+          this.successMsg = true;
           setTimeout(function() {
-            this.successMsg == false;
+            this.successMsg = false;
           }.bind(this), this.displayMsgTimeout)
 
           this.pageService.getPages().subscribe(pages => {
