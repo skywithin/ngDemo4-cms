@@ -8,7 +8,7 @@ ng g c components/navbar
 3. Add navbar sample html from http://getbootstrap.com/docs/3.3/examples/starter-template/
 
 4. Create Page service
-ng generate service services/page -m-app.module
+ng generate service services/page -m=app.module
 ng g s services/page
 
 5. Create Pages component
@@ -26,6 +26,12 @@ ng g c components/adminAddPage
 
 10. Create addPage() method
 
-9. Admin edit-page
+11. Admin edit-page
 ng g c components/adminEditPage
+
+12. Create Admin sidebar component & service
+ng g c components/adminSidebar
+ng g s services/sidebar -m=app.module
+
+
 

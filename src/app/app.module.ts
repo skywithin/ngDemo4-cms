@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { PageService } from './services/page.service';
+import { SidebarService } from './services/sidebar.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -12,6 +13,7 @@ import { PagesComponent } from './components/pages/pages.component';
 import { AdminPagesComponent } from './components/admin-pages/admin-pages.component';
 import { AdminAddPageComponent } from './components/admin-add-page/admin-add-page.component';
 import { AdminEditPageComponent } from './components/admin-edit-page/admin-edit-page.component';
+import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
 
 const appRoutes: Routes = [
   {
@@ -25,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'admin/edit-page/:id',
     component: AdminEditPageComponent
+  },
+  {
+    path: 'admin/sidebar',
+    component: AdminSidebarComponent
   },
   {
     path: ':page',
@@ -43,7 +49,8 @@ const appRoutes: Routes = [
     PagesComponent,
     AdminPagesComponent,
     AdminAddPageComponent,
-    AdminEditPageComponent
+    AdminEditPageComponent,
+    AdminSidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    PageService
+    PageService,
+    SidebarService
   ],
   bootstrap: [AppComponent]
 })
