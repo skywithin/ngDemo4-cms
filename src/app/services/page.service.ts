@@ -9,16 +9,25 @@ export class PageService {
 
   public pagesBS = new BehaviorSubject<Object>(null);
 
+  private hostUrl: string = 'http://localhost:52897/api/';
+
   getPages() {
-    return this.http.get('http://localhost:52897/api/pages');
+    return this.http.get(this.hostUrl + 'pages');
   }
 
   getPage(slug) {
-    return this.http.get('http://localhost:52897/api/pages/' + slug);
+    return this.http.get(this.hostUrl + 'pages/' + slug);
   }
 
   postAddPage(value) {
-    return this.http.post('http://localhost:52897/api/pages/create', value);
+    return this.http.post(this.hostUrl + 'pages/create', value);
   }
 
+  getEditPage(id) {
+    return this.http.get(this.hostUrl + 'pages/edit/' + id);
+  }
+
+  postEditPage(value) {
+    return this.http.put(this.hostUrl + 'pages/edit/' + value.id, value);
+  }
 }
