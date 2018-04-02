@@ -17,6 +17,19 @@
           </li>
         </ng-container>>
       </ul>
+
+      <ul *ngIf="!userLoggedIn" class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="/register">Register</a>
+          <a routerLink="/login">Login</a>
+        </li>
+      </ul>
+
+      <ul *ngIf="userLoggedIn" class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="/logout">Hi {{ user }}, Logout</a>
+        </li>
+      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>

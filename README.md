@@ -39,3 +39,4 @@ ng g c components/logout
 ng g c components/register
 ng g s services/user -m=app.module
 
+14. Add user links to navbar
