@@ -8,8 +8,13 @@ import { PageService } from './services/page.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PagesComponent } from './components/pages/pages.component';
+import { AdminPagesComponent } from './components/admin-pages/admin-pages.component';
 
 const appRoutes: Routes = [
+  {
+    path: 'admin/pages',
+    component: AdminPagesComponent
+  },
   {
     path: ':page',
     component: PagesComponent
@@ -24,7 +29,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    PagesComponent
+    PagesComponent,
+    AdminPagesComponent
   ],
   imports: [
     BrowserModule,

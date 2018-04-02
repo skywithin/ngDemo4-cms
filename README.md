@@ -18,4 +18,7 @@ ng g c components/pages
 
 7. Update navbar navigation
 
+8. Admin pages
+ng g c components/adminPages
+
 
