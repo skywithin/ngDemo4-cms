@@ -21,13 +21,18 @@
       <ul *ngIf="!userLoggedIn" class="nav navbar-nav navbar-right">
         <li>
           <a routerLink="/register">Register</a>
-          <a routerLink="/login">Login</a>
         </li>
+        <li>
+            <a routerLink="/login">Login</a>
+          </li>
       </ul>
 
       <ul *ngIf="userLoggedIn" class="nav navbar-nav navbar-right">
         <li>
-          <a routerLink="/logout">Hi {{ user }}, Logout</a>
+          <a href="#">Hi {{ user }},</a>
+        </li>
+        <li>
+          <a routerLink="/logout">Logout</a>
         </li>
       </ul>
     </div><!--/.nav-collapse -->
