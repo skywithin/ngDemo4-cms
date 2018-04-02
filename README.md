@@ -13,3 +13,9 @@ ng g s services/page
 
 5. Create Pages component
 ng g c components/pages
+
+6. Create routing for Pages component
+
+7. Update navbar navigation
+
+
