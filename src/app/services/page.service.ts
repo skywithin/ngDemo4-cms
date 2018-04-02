@@ -30,4 +30,8 @@ export class PageService {
   putEditPage(value) {
     return this.http.put(this.hostUrl + 'pages/edit/' + value.id, value);
   }
+
+  deletePage(id) {
+    return this.http.delete(this.hostUrl + 'pages/delete/' + id);
+  }
 }

@@ -10,8 +10,9 @@ import { PageService } from '../../services/page.service';
 export class AdminPagesComponent implements OnInit {
 
   pages: any;
-  successMessage: boolean = false;
-
+  successMsg: boolean = false;
+  displayMsgTimeout: number = 2000;
+  
   constructor(
     private router: Router,
     private pageService: PageService
@@ -21,4 +22,21 @@ export class AdminPagesComponent implements OnInit {
     this.pages = this.pageService.pagesBS;
   }
 
+  deletePage(id) {
+    if (confirm('Confirm deletion')) {
+      this.pageService.deletePage(id).subscribe(response => {
+        
+          this.successMsg = true;
+          setTimeout(function() {
+            this.successMsg = false;
+          }.bind(this), this.displayMsgTimeout)
+
+          this.pageService.getPages().subscribe(pages => {
+            this.pageService.pagesBS.next(pages);
+          });
+      });
+    } else {
+      console.log('Form is not valid.')
+    }
+  }
 }
