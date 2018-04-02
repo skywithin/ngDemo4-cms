@@ -45,3 +45,6 @@ ng g s services/user -m=app.module
 
 16. Implement Delete page functionality
 
+17. Create Admin navbar component
+ng g c components/adminNavbar
+

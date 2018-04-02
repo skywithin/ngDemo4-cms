@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserService } from './services/user.service';
+import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 
 const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     AdminSidebarComponent,
     LoginComponent,
     LogoutComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,
