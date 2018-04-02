@@ -33,5 +33,9 @@ ng g c components/adminEditPage
 ng g c components/adminSidebar
 ng g s services/sidebar -m=app.module
 
-
+13. Create login, logout and register components + user service
+ng g c components/login
+ng g c components/logout
+ng g c components/register
+ng g s services/user -m=app.module
 

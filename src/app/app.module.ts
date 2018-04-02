@@ -14,32 +14,21 @@ import { AdminPagesComponent } from './components/admin-pages/admin-pages.compon
 import { AdminAddPageComponent } from './components/admin-add-page/admin-add-page.component';
 import { AdminEditPageComponent } from './components/admin-edit-page/admin-edit-page.component';
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { RegisterComponent } from './components/register/register.component';
+import { UserService } from './services/user.service';
 
 const appRoutes: Routes = [
-  {
-    path: 'admin/pages',
-    component: AdminPagesComponent
-  },
-  {
-    path: 'admin/add-page',
-    component: AdminAddPageComponent
-  },
-  {
-    path: 'admin/edit-page/:id',
-    component: AdminEditPageComponent
-  },
-  {
-    path: 'admin/sidebar',
-    component: AdminSidebarComponent
-  },
-  {
-    path: ':page',
-    component: PagesComponent
-  },
-  {
-    path: '',
-    component: PagesComponent
-  }
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'logout', component: LogoutComponent},
+  {path: 'admin/pages', component: AdminPagesComponent},
+  {path: 'admin/add-page', component: AdminAddPageComponent},
+  {path: 'admin/edit-page/:id', component: AdminEditPageComponent},
+  {path: 'admin/sidebar', component: AdminSidebarComponent},
+  {path: ':page', component: PagesComponent},
+  {path: '', component: PagesComponent}
 ];
 
 @NgModule({
@@ -50,7 +39,10 @@ const appRoutes: Routes = [
     AdminPagesComponent,
     AdminAddPageComponent,
     AdminEditPageComponent,
-    AdminSidebarComponent
+    AdminSidebarComponent,
+    LoginComponent,
+    LogoutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +52,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     PageService,
-    SidebarService
+    SidebarService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
