@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PagesComponent } from './components/pages/pages.component';
 import { AdminPagesComponent } from './components/admin-pages/admin-pages.component';
 import { AdminAddPageComponent } from './components/admin-add-page/admin-add-page.component';
+import { AdminEditPageComponent } from './components/admin-edit-page/admin-edit-page.component';
 
 const appRoutes: Routes = [
   {
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'admin/add-page',
     component: AdminAddPageComponent
+  },
+  {
+    path: 'admin/edit-page/:id',
+    component: AdminEditPageComponent
   },
   {
     path: ':page',
@@ -37,7 +42,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     PagesComponent,
     AdminPagesComponent,
-    AdminAddPageComponent
+    AdminAddPageComponent,
+    AdminEditPageComponent
   ],
   imports: [
     BrowserModule,
