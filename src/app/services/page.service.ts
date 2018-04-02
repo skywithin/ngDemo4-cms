@@ -27,7 +27,7 @@ export class PageService {
     return this.http.get(this.hostUrl + 'pages/edit/' + id);
   }
 
-  postEditPage(value) {
+  putEditPage(value) {
     return this.http.put(this.hostUrl + 'pages/edit/' + value.id, value);
   }
 }
