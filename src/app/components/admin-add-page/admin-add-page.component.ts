@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PageService } from '../../services/page.service';
 
+declare var CKEDITOR: any;
+
 @Component({
   selector: 'app-admin-add-page',
   templateUrl: './admin-add-page.component.html',
@@ -22,10 +24,17 @@ export class AdminAddPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (localStorage.getItem("user") !== '"admin"') {
+      this.router.navigateByUrl('');
+    } else {
+      CKEDITOR.replace("content");
+    }
   }
 
   addPage({form, value, valid}){
     if (valid) {
+      value.content = CKEDITOR.instances.content.getData();
+
       this.pageService.postAddPage(value).subscribe(response => {
         if (response == 'pageExists') {
           this.errorMsg = true;
@@ -39,6 +48,9 @@ export class AdminAddPageComponent implements OnInit {
           setTimeout(function() {
             this.successMsg = false;
           }.bind(this), this.displayMsgTimeout)
+
+          // Clear editor
+          CKEDITOR.instances.content.setData('');
 
           this.pageService.getPages().subscribe(pages => {
             this.pageService.pagesBS.next(pages);

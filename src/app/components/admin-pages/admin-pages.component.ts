@@ -19,11 +19,17 @@ export class AdminPagesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (localStorage.getItem("user") !== '"admin"') {
+      this.router.navigateByUrl('');
+    } 
+    
     this.pages = this.pageService.pagesBS;
   }
 
   deletePage(id) {
     if (confirm('Confirm deletion')) {
+
+      console.log("deleting page id " + id)
       this.pageService.deletePage(id).subscribe(response => {
         
           this.successMsg = true;
