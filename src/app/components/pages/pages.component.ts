@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { PageService } from '../../services/page.service';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-pages',
@@ -13,11 +14,15 @@ export class PagesComponent implements OnInit {
   private param: any;
   private pageBody: any;
 
+  public sidebar: string;
+  public hasSidebar: boolean;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private title: Title,
-    private pageService: PageService
+    private pageService: PageService,
+    private sidebarService: SidebarService
   ) { }
 
   ngOnInit() {
@@ -36,6 +41,16 @@ export class PagesComponent implements OnInit {
           this.router.navigateByUrl('');
         }
         this.pageBody = page["content"];
+
+        if (page["hasSidebar"] === "true") {
+          this.hasSidebar = true;
+          this.sidebarService.getSidebar().subscribe(sidebar => {
+            this.sidebar = sidebar["content"];
+          });
+        } else {
+          this.hasSidebar = false;
+        }
+        
       });
     });
   }
