@@ -27,6 +27,11 @@
       <textarea name="content" cols="30" rows="10" class="form-control" placeholder="Content" [(ngModel)]="content"></textarea>
   </div>
 
+  <div class="form-group">
+    <label for="">Has Sidebar:</label>
+    <input type="checkbox" name="hasSidebar" [checked]="sidebar" [(ngModel)]="hasSidebar">
+  </div>
+
   <input type="hidden" name="id" [(ngModel)]="id">
 
   <div class="form-group">
